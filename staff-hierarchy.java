@@ -9,7 +9,7 @@ class Staff {
 		phone = input.next();
 		salary = input.next();
 	}
-	voiddisplay() 
+	void display() 
         {
 System.out.print(staffID+"\t"+name+"\t"+phone+"\t"+salary+"\t");
 }
@@ -35,7 +35,7 @@ class Technical extends Staff {
 		System.out.println("Enter Skills");
 		Skills = input.next();
 	}
-	voiddisplay() {
+	void display() {
 		super.display(); // call super class display() method
 		System.out.println(Skills);
 	}
@@ -48,13 +48,13 @@ class Contract extends Staff {
 		period = input.next();
 	}
         @Override
-	voiddisplay() {
+	void display() {
 		super.display(); // call super class display() method
 		System.out.println(period);
 	}
 }
 publicclassStaffDemo {
-	publicstaticvoidmain(String[] args) {
+	public static void main(String[] args) {
 		Scanner input = newScanner(System.in);
 		System.out.println("Enter number of staff details to be created");
 		int n = input.nextInt();
@@ -62,17 +62,17 @@ publicclassStaffDemo {
 		Technical tech[] = new Technical[n];
 		Contract c[] = new Contract[n];
 		// Read Staff information under 3 categories
-		for (inti = 0; i< n; i++) {
+		for (int i = 0; i< n; i++) {
 			System.out.println("Enter Teaching staff information");
 			ts[i] = newTeaching();
 			ts[i].read();
 		}
-		for (inti = 0; i< n; i++) {
+		for (int i = 0; i< n; i++) {
 			System.out.println("Enter Technical staff information");
-			tech[i] = newTechnical();
+			tech[i] = new Technical(); //tech is declared and initialized as an array of objects of class Technical
 			tech[i].read();
 		}
-		for (inti = 0; i< n; i++) {
+		for (int i = 0; i< n; i++) {
 			System.out.println("Enter Contract staff information");
 			c[i] = newContract();
 			c[i].read();
@@ -80,13 +80,13 @@ publicclassStaffDemo {
 		// Display Staff Information
 		System.out.println("\n STAFF DETAILS: \n");
 		System.out.println("-----TEACHING STAFF DETAILS----- ");
-		for (inti = 0; i< n; i++) 
+		for (int i = 0; i< n; i++) 
 			ts[i].display();
 		System.out.println("-----TECHNICAL STAFF DETAILS-----");
-		for (inti = 0; i< n; i++) 
+		for (int i = 0; i< n; i++) 
 			tech[i].display();
 		System.out.println("-----CONTRACT STAFF DETAILS-----");
-		for (inti = 0; i< n; i++) 
+		for (int i = 0; i< n; i++) 
 			c[i].display();
 		input.close();	
 		}
