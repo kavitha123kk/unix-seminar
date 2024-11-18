@@ -17,7 +17,10 @@ System.out.print(staffID+"\t"+name+"\t"+phone+"\t"+salary+"\t");
 class Teaching extends Staff {
 	String domain, publication;
 	voidread() {
-		super.read(); // call super class read method
+		super.read(); // call super class read method 
+		//When super.read() is invoked in the Teaching class, it executes the read() method defined in the Staff class. 
+		//This ensures that the logic to initialize staffID, name, phone, and salary (defined in Staff) is run before adding logic specific to the Teaching class.
+
 		System.out.println("Enter Domain");
 		domain = input.next();
 		System.out.println("Enter Publication");
